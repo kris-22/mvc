@@ -10,7 +10,7 @@ return [
     'controller' => 'ProductController',
     'action' => 'index'
   ],
-  '/mvc/produkty/(\d+)' => [
+  '/mvc/produkty/(.+)' => [
     'controller' => 'ProductController',
     'action' => 'show'
   ],

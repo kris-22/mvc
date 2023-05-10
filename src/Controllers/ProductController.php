@@ -8,7 +8,7 @@ class ProductController
   {
     // wykonaj odpowiednie operacje i pobierz potrzebne dane
     $pageTitle = 'Pradukty';
-    $welcomeMessage = 'Witaj na stronie głównej!';
+    $welcomeMessage = 'Witaj na stronie produkty tutaj zobacz nasze najelpsze okazje !';
 
     // wyrenderuj widok z danymi
     // require_once VIEW_PATH . '/home.php';
@@ -20,9 +20,9 @@ class ProductController
   // function show id from link /produkty/{id}
   public function show($id)
   {
-    // wykonaj odpowiednie operacje i pobierz potrzebne dane
+    // wykonaj odpowiednie operacje i pobierz potrzebne dane\d+
     $pageTitle = 'Produkt';
-    $welcomeMessage = 'Witaj na stronie głównej!';
+    $welcomeMessage = "Witaj na stronie produktu <u>" . $id . "</u>!";
 
     // wyrenderuj widok z danymi
     // require_once VIEW_PATH . '/home.php';
