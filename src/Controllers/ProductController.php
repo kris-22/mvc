@@ -12,7 +12,7 @@ class ProductController
 
     // wyrenderuj widok z danymi
     // require_once VIEW_PATH . '/home.php';
-    require_once VIEW_PATH . '/home.php';
+    require_once VIEW_PATH . '/produkt.php';
 
     echo $pageTitle;
   }
@@ -21,12 +21,17 @@ class ProductController
   public function show($id)
   {
     // wykonaj odpowiednie operacje i pobierz potrzebne dane\d+
+    if (isset($_GET['name'])) {
+      $name = $_GET['name'];
+      echo $name;
+      header("Location: /mvc/produkty/" . $name);
+    }
     $pageTitle = 'Produkt';
     $welcomeMessage = "Witaj na stronie produktu <u>" . $id . "</u>!";
 
     // wyrenderuj widok z danymi
     // require_once VIEW_PATH . '/home.php';
-    require_once VIEW_PATH . '/home.php';
+    require_once VIEW_PATH . '/produkt.php';
 
     // echo $pageTitle;
     // echo " bambiku $id";
