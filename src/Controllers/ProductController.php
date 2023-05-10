@@ -22,9 +22,13 @@ class ProductController
   {
     // wykonaj odpowiednie operacje i pobierz potrzebne dane\d+
     if (isset($_GET['name'])) {
-      $name = $_GET['name'];
-      echo $name;
-      header("Location: /mvc/produkty/" . $name);
+      if (empty($_GET['name'])) {
+        header("Location:" . APP_FOLDER . "/produkty");
+      } else {
+        $name = $_GET['name'];
+        echo $name;
+        header("Location:" . APP_FOLDER . "/produkty/" . $name);
+      }
     }
     $pageTitle = 'Produkt';
     $welcomeMessage = "Witaj na stronie produktu <u>" . $id . "</u>!";
@@ -33,9 +37,6 @@ class ProductController
     // require_once VIEW_PATH . '/home.php';
     require_once VIEW_PATH . '/produkt.php';
 
-    // echo $pageTitle;
-    // echo " bambiku $id";
-    // echo $id;
     print_r($id);
   }
 }

@@ -2,19 +2,23 @@
 
 // Tablica routingu
 return [
-  '/mvc/' => [
+  '/' => [
     'controller' => 'HomeController',
     'action' => 'index'
   ],
-  '/mvc/produkty' => [
+  '/index.php' => [
+    'controller' => 'HomeController',
+    'action' => 'index'
+  ],
+  '/produkty' => [
     'controller' => 'ProductController',
     'action' => 'index'
   ],
-  '/mvc/produkty/(.+)' => [
+  '/produkty/(.+)' => [
     'controller' => 'ProductController',
     'action' => 'show'
   ],
-  '/kontakt' => [
+  '/studia/kontakt' => [
     'controller' => 'ContactController',
     'action' => 'index'
   ]
