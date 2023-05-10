@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+
 class HomeController
 {
   public function index()
@@ -11,6 +12,7 @@ class HomeController
     $welcomeMessage = 'Witaj na stronie głównej!';
 
     // wyrenderuj widok z danymi
-    // require_once VIEW_PATH . '/home.php';
+    require_once VIEW_PATH . '/home.php';
+    echo $pageTitle;
   }
 }

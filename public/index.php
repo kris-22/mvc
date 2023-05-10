@@ -2,33 +2,38 @@
 
 // Ścieżki do plików w aplikacji
 // Załączamy Router
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once dirname(__DIR__) . '/config.php';
 $routes = require_once APP_ROOT . '/Router.php';
 
 // Wczytaj plik z routingiem
 // Przetwórz żądanie
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-// echo "---";
-// print_r($path);
-// echo "---";
-// print_r($routes);
+
 // Sprawdź, czy żądana ścieżka istnieje w routing
-if (array_key_exists($path, $routes)) {
-  // Wczytaj kontroler i metodę
-  $controllerName = "Controllers\\" . $routes[$path]['controller'];
+foreach ($routes as $route => $handler) {
+  // Dopasuj wzorzec ścieżki
+  if (preg_match('#^' . $route . '$#', $path, $matches)) {
+    // Pobierz kontroler i akcję
+    $controllerName = $handler['controller'];
+    $actionName = $handler['action'];
+    $controllerClass = "Controllers\\" . $handler['controller'];
 
-  $actionName = $routes[$path]['action'];
+    $params = array_slice($matches, 1);
 
-  // Utwórz obiekt kontrolera i wywołaj metodę
-  require_once APP_ROOT . "/src/{$controllerName}.php";
-  echo $controllerName;
 
-  $controller = new $controllerName();
-  $controller->$actionName();
-} else {
-  // Przekieruj do strony 404
-  header("HTTP/1.0 404 Not Found");
-  // include("views/errors/404.php");
-  echo '404';
-  // echo APP_ROOT;
+    // Utwórz obiekt kontrolera i wywołaj akcję
+    require_once APP_ROOT . "/src/Controllers/{$controllerName}.php";
+    $controller = new $controllerClass();
+    $controller->$actionName(...$params);
+
+    // Zakończ przetwarzanie
+    return;
+  }
 }
+
+// Jeśli żądana ścieżka nie pasuje do żadnego routingu, zwróć błąd 404
+header("HTTP/1.0 404 Not Found");
+echo '404';

@@ -2,15 +2,15 @@
 
 // Tablica routingu
 return [
-  '/' => [
+  '/mvc/' => [
     'controller' => 'HomeController',
     'action' => 'index'
   ],
-  '/produkty' => [
+  '/mvc/produkty' => [
     'controller' => 'ProductController',
     'action' => 'index'
   ],
-  '/produkty/{id}' => [
+  '/mvc/produkty/(\d+)' => [
     'controller' => 'ProductController',
     'action' => 'show'
   ],
