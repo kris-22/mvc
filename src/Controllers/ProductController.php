@@ -41,8 +41,13 @@ class ProductController
 
 
 
-    $product = new Product($id);
-    $product = $product->getProduct($id);
+    $products = new Product($id);
+    $product = $products->getProduct($id);
+    $productList = $products->listProducts();
+    $options = "";
+    foreach ($productList as $key => $value) {
+      $options .= "<option value='" . $value . "'>";
+    }
 
     if ($product !== null) {
       $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
