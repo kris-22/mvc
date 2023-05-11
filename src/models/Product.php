@@ -26,4 +26,14 @@ class Product
 
     return null;
   }
+  public function listProducts()
+  {
+    $data = file_get_contents(APP_ROOT . '/src/dev/data.json');
+    $products = json_decode($data, true);
+    $lista = [];
+    foreach ($products["products"] as $product) {
+      array_push($lista, $product["name"]);
+    }
+    return $lista;
+  }
 }

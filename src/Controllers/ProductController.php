@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Product;
 
+require_once MODEL_PATH . '/Product.php';
 class ProductController
 {
   public function index()
@@ -11,9 +12,12 @@ class ProductController
     // wykonaj odpowiednie $id = urldecode($id);operacje i pobierz potrzebne dane
     $pageTitle = 'Pradukty';
     $welcomeMessage = 'Witaj na stronie produkty tutaj zobacz nasze najelpsze okazje !';
-
-    // wyrenderuj widok z danymi
-    // require_once VIEW_PATH . '/home.php';
+    $product = new Product("");
+    $product = $product->listProducts();
+    $options = "";
+    foreach ($product as $key => $value) {
+      $options .= "<option value='" . $value . "'>";
+    }
     require_once VIEW_PATH . '/produkt.php';
 
     echo $pageTitle;
@@ -35,7 +39,7 @@ class ProductController
     }
     $pageTitle = 'Produkt';
 
-    require_once MODEL_PATH . '/Product.php';
+
 
     $product = new Product($id);
     $product = $product->getProduct($id);

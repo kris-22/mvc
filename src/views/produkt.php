@@ -19,8 +19,14 @@
   <h1>Witaj na <?php echo $pageTitle ?> </h1>
   <?php echo $welcomeMessage ?>
   <form action="produkty/load">
-    <input type="text" name="name" id="name">
+
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="name">
+    <datalist id="ice-cream-flavors">
+      <?php echo $options ?>
+    </datalist>
+
     <input type="submit" value="submit">
+
   </form>
 
 
