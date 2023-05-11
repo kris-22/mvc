@@ -40,7 +40,7 @@
 
 <div class="navbar">
   <a href="<?php echo APP_FOLDER ?>/">Home</a>
-  <a href="produkty">produkty</a>
+  <a href="<?php echo APP_FOLDER ?>/produkty">produkty</a>
   <div class="dropdown">
     <button class="dropbtn">Dropdown
       <i class="fa fa-caret-down"></i>

@@ -14,10 +14,12 @@
 
   <?php include('components/menu.php') ?>
 
-
-
   <h1>Witaj na <?php echo $pageTitle ?> </h1>
+  <?php echo $img ?>
+
   <?php echo $welcomeMessage ?>
+
+
   <form action="produkty/load">
 
     <input list="ice-cream-flavors" id="ice-cream-choice" name="name">
@@ -28,9 +30,6 @@
     <input type="submit" value="submit">
 
   </form>
-
-
-
 
 </body>
 

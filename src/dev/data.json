@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "telefon",
-      "description": "A high-performance smartphone with a 6.5-inch AMOLED display, 128GB storage, and dual rear cameras."
+      "description": "A high-performance smartphone with a 6.5-inch AMOLED display, 128GB storage, and dual rear cameras.",
+      "img": "https://sklep.gkpge.pl/media/thumbs/0046536_telefon-dla-seniora-maxcom-mm426.jpeg"
     },
     {
       "id": 2,
@@ -13,7 +14,13 @@
     {
       "id": 3,
       "name": "słuchawki",
-      "description": "Premium wireless headphones with active noise cancellation, Bluetooth 5.0, and 30 hours of battery life."
+      "description": "Premium wireless headphones with active noise cancellation, Bluetooth 5.0, and 30 hours of battery life.",
+      "img": "https://a.allegroimg.com/s512/114db6/44f0d7fa482d852813b584cd40d0/Sluchawki-gamingowe-dla-graczy-mikrofon-LED-RGB-PC"
+    },
+    {
+      "id": 4,
+      "name": "myszka",
+      "description": "super myszka, taka gamingowa"
     }
   ]
 }

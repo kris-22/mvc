@@ -1,4 +1,7 @@
 <?php
+
+namespace Models;
+
 class Product
 {
   private $name;
@@ -9,7 +12,7 @@ class Product
     $this->name = $name;
   }
 
-  // Metoda statyczna do pobierania danych z pliku JSON
+  // Metoda informacji o produkcie
   public function getProduct()
   {
     $data = file_get_contents(APP_ROOT . '/src/dev/data.json');
@@ -17,15 +20,15 @@ class Product
     // zmień na małe liery
     $this->name = strtolower($this->name);
     foreach ($products["products"] as $product) {
-      // echo $product['id'];
       if (strtolower($product['name']) === $this->name) {
         return $product;
-      } else {
       }
     }
 
     return null;
   }
+
+  // Metoda pobierania nazw produktów z pliku JSON
   public function listProducts()
   {
     $data = file_get_contents(APP_ROOT . '/src/dev/data.json');
@@ -34,6 +37,7 @@ class Product
     foreach ($products["products"] as $product) {
       array_push($lista, $product["name"]);
     }
+
     return $lista;
   }
 }
