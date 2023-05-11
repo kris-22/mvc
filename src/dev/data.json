@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "telefon",
+      "description": "A high-performance smartphone with a 6.5-inch AMOLED display, 128GB storage, and dual rear cameras."
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "description": "A lightweight and powerful laptop with a 13.3-inch Retina display, 8GB RAM, and 256GB SSD storage."
+    },
+    {
+      "id": 3,
+      "name": "słuchawki",
+      "description": "Premium wireless headphones with active noise cancellation, Bluetooth 5.0, and 30 hours of battery life."
+    }
+  ]
+}

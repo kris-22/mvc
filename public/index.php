@@ -15,11 +15,10 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // Sprawdź, czy żądana ścieżka istnieje w routing
 foreach ($routes as $route => $handler) {
   // Dopasuj wzorzec ścieżki
-  if (preg_match('#^' . $commonPart . $route . '$#', $path, $matches)) {
+  if (preg_match('#^' . APP_FOLDER . $route . '$#', $path, $matches)) {
     // Pobierz kontroler i akcję
     $controllerName = $handler['controller'];
     $actionName = $handler['action'];
-    $APPFolder = $commonPart;
     $controllerClass = "Controllers\\" . $handler['controller'];
     $params = array_slice($matches, 1);
 

@@ -17,7 +17,7 @@
 
 
   <h1>Witaj na <?php echo $pageTitle ?> </h1>
-  <h3> <?php echo $welcomeMessage ?> </h3>
+  <?php echo $welcomeMessage ?>
   <form action="produkty/load">
     <input type="text" name="name" id="name">
     <input type="submit" value="submit">

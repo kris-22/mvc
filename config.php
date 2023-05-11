@@ -3,9 +3,11 @@
 define('APP_ROOT', dirname(__FILE__));
 define('VIEW_PATH', APP_ROOT . '/src/views');
 define('CONTROLLER_PATH', APP_ROOT . '/src/Controllers');
-define('MODEL_PATH', APP_ROOT . '/models');
+define('MODEL_PATH', APP_ROOT . '/src/models');
 
+// adres url
 $string1 = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//ściezka do pliku
 $string2 = parse_url(APP_ROOT, PHP_URL_PATH);
 
 // Zamień wszystkie ukośniki na prawe
