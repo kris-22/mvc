@@ -21,5 +21,17 @@ return [
   '/studia/kontakt' => [
     'controller' => 'ContactController',
     'action' => 'index'
+  ],
+  '/style/(.+)' => [
+    'controller' => 'SetupController',
+    'action' => 'style'
+  ],
+  '/img/(.+)' => [
+    'controller' => 'SetupController',
+    'action' => 'img'
+  ],
+  '/script/(.+)' => [
+    'controller' => 'SetupController',
+    'action' => 'script'
   ]
 ];
