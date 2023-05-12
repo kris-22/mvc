@@ -22,6 +22,8 @@ return [
     'controller' => 'ContactController',
     'action' => 'index'
   ],
+
+  // setup routes 
   '/style/(.+)' => [
     'controller' => 'SetupController',
     'action' => 'style'
