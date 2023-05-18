@@ -10,7 +10,10 @@
 </head>
 
 <body>
-  <?php include(VIEW_PATH . '/components/menu.php') ?>
+  <?php
+  view('components/menu');
+
+  ?>
   <!-- login form -->
   <div class="authForm">
     <h1>Logowanie</h1>
@@ -31,6 +34,7 @@
 
   <?php
   // loadController('Home', 'index');
+  loadController('Auth', 'register')
 
 
   ?>

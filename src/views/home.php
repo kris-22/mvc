@@ -10,14 +10,29 @@
 
 <body>
   <?php
-  view('components/menu')
+  loadController('Menu', 'index');
+
   ?>
-  <h1>Witaj na <?php echo $pageTitle ?> </h1>
-  <h3> <?php echo $welcomeMessage ?> </h3>
+  <h1>Witaj na <?php echo $params['pageTitle'] ?> </h1>
+
+  <h3> <?php echo $params['welcomeMessage']  ?> </h3>
 
 
   <?php
-  loadController('Auth', 'login');
+  // loadController('Product', 'show', ['id' => 'telefon']);
+
+  // loadController('Product', 'showOne', ['id' => 'słuchawki']);
+  // loadController('Product', 'showOne', ['id' => 'telefon']);
+  // loadController('Product', 'showOne', ['id' => 'myszka']);
+  // loadController('Product', 'showOne', ['id' => 'laptop']);
+
+  // loadController('Product', 'show', ['id' => 'telefweon']);
+
+  // loadController('Product', 'show');
+  // loadController('Auth', 'login');
+  // loadController('Auth', 'register');
+  // loadController('Product', 'show', ['id' => 'telefon']);
+
   ?>
 
 </body>

@@ -17,25 +17,26 @@
   <!-- strona główna  -->
 
   <?php
-  include('components/menu.php');
+  view('components/menu');
+
   ?>
   <form action="produkty/load" class="productForm">
 
     <input type="text" list="ice-cream-flavors" id="ice-cream-choice" name="name">
     <datalist id="ice-cream-flavors">
-      <?php echo $options ?>
+      <?php echo $params["options"] ?>
     </datalist>
 
     <input type="submit" value="submit">
 
   </form>
 
-  <h1>Witaj na <?php echo $pageTitle ?> </h1>
-  <?php echo $img ?>
+  <h1>Witaj na <?php echo $params["pageTitle"] ?> </h1>
+  <?php echo $params["img"] ?>
 
-  <?php echo $welcomeMessage ?>
+  <?php echo $params["welcomeMessage"] ?>
   <br>
-  <button id=" <?php echo $id ?>" type="button" class="AddToBasketBtn btn btn-primary">Dodaj do koszyka</button>
+  <button id=" <?php echo $params['koszyk'] ?>" type="button" class="AddToBasketBtn btn btn-primary">Dodaj do koszyka</button>
 
 </body>
 

@@ -20,7 +20,18 @@
     {
       "id": 4,
       "name": "myszka",
-      "description": "super myszka, taka gamingowa"
+      "description": "super myszka, taka gamingowa",
+      "img": "https://www.huzaro.pl/userdata/public/gfx/6126/shot1.5_top_view.png"
+    },
+    {
+      "id": 5,
+      "name": "klawiatura",
+      "description": "super klawiatura, taka gamingowa"
+    },
+    {
+      "id": 6,
+      "name": "monitor",
+      "description": "super monitor, taki gamingowy"
     }
   ]
 }

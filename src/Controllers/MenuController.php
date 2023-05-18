@@ -3,7 +3,7 @@
 namespace Controllers;
 
 
-class HomeController
+class MenuController
 {
   public function index()
   {
@@ -13,9 +13,6 @@ class HomeController
 
     // wyrenderuj widok z danymi
     // require_once VIEW_PATH . '/home.php';
-    view('home', [
-      'pageTitle' => $pageTitle,
-      'welcomeMessage' => $welcomeMessage
-    ]);
+    view('components/menu', "", true);
   }
 }

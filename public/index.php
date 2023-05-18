@@ -12,8 +12,10 @@ $routes = require_once APP_ROOT . '/Router.php';
 // Przetwórz żądanie
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Sprawdź, czy żądana ścieżka istnieje w routing
+// run autch object
+
 foreach ($routes as $route => $handler) {
+  // Sprawdź, czy żądana ścieżka istnieje w routing
   // Dopasuj wzorzec ścieżki
   if (preg_match('#^' . APP_FOLDER . $route . '$#', $path, $matches)) {
     // Pobierz kontroler i akcję
@@ -22,34 +24,38 @@ foreach ($routes as $route => $handler) {
     $controllerClass = "Controllers\\" . $handler['controller'];
     $params = array_slice($matches, 1);
 
-
     // Utwórz obiekt kontrolera i wywołaj akcję
     require_once APP_ROOT . "/src/Controllers/{$controllerName}.php";
     $controller = new $controllerClass();
     $controller->$actionName(...$params);
-
     // Zakończ przetwarzanie
     return;
   }
 }
 
-function view($viewName, $params = [])
+function view($viewName, $params = [], $once = false)
 {
-  require_once VIEW_PATH . "/{$viewName}.php";
+  if ($once == true) {
+    require_once VIEW_PATH . "/{$viewName}.php";
+  } else {
+    require VIEW_PATH . "/{$viewName}.php";
+  }
 }
 
 function loadController($controllerName, $actionName, $params = [])
 {
+
   $controllerName  = $controllerName . "Controller";
 
-  // echo $controllerName;
   $controllerClass = "Controllers\\" . $controllerName;
   require_once CONTROLLER_PATH . "/{$controllerName}.php";
   $controller = new $controllerClass();
   $controller->$actionName(...$params);
 
-  //   // return;
+  // return;
 }
+
+
 
 
 
