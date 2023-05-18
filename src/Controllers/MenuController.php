@@ -5,6 +5,11 @@ namespace Controllers;
 
 class MenuController
 {
+  /**
+   * index
+   *
+   * @return void
+   */
   public function index()
   {
     // wykonaj odpowiednie operacje i pobierz potrzebne dane

@@ -11,7 +11,8 @@
 
 <body>
   <?php
-  view('components/menu');
+  loadController('Menu', 'index');
+
 
   ?>
   <!-- login form -->

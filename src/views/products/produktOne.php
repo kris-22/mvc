@@ -17,8 +17,7 @@
   <!-- strona główna  -->
 
   <?php
-  view('components/menu');
-
+  loadController('Menu', 'index');
   ?>
 
   <h1>Witaj na <?php echo $params['pageTitle'] ?> </h1>

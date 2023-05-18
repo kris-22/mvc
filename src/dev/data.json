@@ -3,35 +3,44 @@
     {
       "id": 1,
       "name": "telefon",
+      "cena": "1000",
       "description": "A high-performance smartphone with a 6.5-inch AMOLED display, 128GB storage, and dual rear cameras.",
       "img": "https://sklep.gkpge.pl/media/thumbs/0046536_telefon-dla-seniora-maxcom-mm426.jpeg"
     },
     {
       "id": 2,
       "name": "Laptop",
-      "description": "A lightweight and powerful laptop with a 13.3-inch Retina display, 8GB RAM, and 256GB SSD storage."
+      "cena": "2000",
+      "description": "A lightweight and powerful laptop with a 13.3-inch Retina display, 8GB RAM, and 256GB SSD storage.",
+      "img": "https://a.allegroimg.com/original/117304/1239521e4568bb9515e7e5952fba/Laptop-Lenovo-T440-Core-i5-16-GB-128-GB-SSD-W10"
     },
     {
       "id": 3,
       "name": "słuchawki",
+      "cena": "300",
       "description": "Premium wireless headphones with active noise cancellation, Bluetooth 5.0, and 30 hours of battery life.",
       "img": "https://a.allegroimg.com/s512/114db6/44f0d7fa482d852813b584cd40d0/Sluchawki-gamingowe-dla-graczy-mikrofon-LED-RGB-PC"
     },
     {
       "id": 4,
       "name": "myszka",
+      "cena": "100",
       "description": "super myszka, taka gamingowa",
       "img": "https://www.huzaro.pl/userdata/public/gfx/6126/shot1.5_top_view.png"
     },
     {
       "id": 5,
       "name": "klawiatura",
-      "description": "super klawiatura, taka gamingowa"
+      "cena": "500",
+      "description": "super klawiatura, taka gamingowa",
+      "img": "https://allegro.stati.pl/AllegroIMG/PRODUCENCI/Endorfy/EY5A003/Klawiatura-Endorfy-EY5A003-01.jpg"
     },
     {
       "id": 6,
       "name": "monitor",
-      "description": "super monitor, taki gamingowy"
+      "cena": "1500",
+      "description": "super monitor, taki gamingowy",
+      "img":"https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/8/pr_2021_8_23_7_58_19_702_00.jpg"
     }
   ]
 }

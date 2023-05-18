@@ -17,7 +17,8 @@
   <!-- strona główna  -->
 
   <?php
-  view('components/menu');
+  loadController('Menu', 'index');
+
 
   ?>
   <form action="produkty/load" class="productForm">

@@ -11,7 +11,8 @@
 
 <body>
   <?php
-  view('components/menu');
+  loadController('Menu', 'index');
+
 
   ?>
   <!-- login form -->
@@ -34,7 +35,7 @@
 
   <?php
   // loadController('Home', 'index');
-  loadController('Auth', 'register')
+  // loadController('Auth', 'register')
 
 
   ?>

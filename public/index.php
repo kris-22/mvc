@@ -33,6 +33,15 @@ foreach ($routes as $route => $handler) {
   }
 }
 
+/**
+ * load view
+ * 
+ * @param string $viewName
+ * @param array $params
+ * @param bool $once
+ * 
+ * @return void
+ */
 function view($viewName, $params = [], $once = false)
 {
   if ($once == true) {
@@ -40,24 +49,30 @@ function view($viewName, $params = [], $once = false)
   } else {
     require VIEW_PATH . "/{$viewName}.php";
   }
+  return;
 }
 
+/**
+ * load controller
+ * 
+ * @param string $controllerName
+ * @param string $actionName
+ * @param array $params
+ * 
+ * @return void
+ */
 function loadController($controllerName, $actionName, $params = [])
 {
 
   $controllerName  = $controllerName . "Controller";
-
   $controllerClass = "Controllers\\" . $controllerName;
+
+  // Utwórz obiekt kontrolera i wywołaj akcję
   require_once CONTROLLER_PATH . "/{$controllerName}.php";
   $controller = new $controllerClass();
   $controller->$actionName(...$params);
-
-  // return;
+  return;
 }
-
-
-
-
 
 // Jeśli żądana ścieżka nie pasuje do żadnego routingu, zwróć błąd 404
 header("HTTP/1.0 404 Not Found");
