@@ -13,6 +13,5 @@ class HomeController
 
     // wyrenderuj widok z danymi
     require_once VIEW_PATH . '/home.php';
-    // echo $pageTitle;
   }
 }

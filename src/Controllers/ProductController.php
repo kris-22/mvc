@@ -16,6 +16,7 @@ class ProductController
     $pageTitle = "Produkty"; //tytuł strony
     $welcomeMessage = 'Witaj na stronie produkty tutaj zobacz nasze najelpsze okazje !'; //wiatmy na stronie
     $img = ""; //obrazek
+    $koszyk = ""; //koszyk
     $options = "";
 
     $products = new Product("");
@@ -23,7 +24,7 @@ class ProductController
     foreach ($product as $key => $value) {
       $options .= "<option value='" . $value . "'>";
     }
-    require_once VIEW_PATH . '/produkt.php';
+    require_once VIEW_PATH . '/produktErro.php';
   }
 
   // function swidoki produktów /produkty/{id}
@@ -61,11 +62,12 @@ class ProductController
     if ($product !== null) {
       $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
       $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
+      $koszyk = $product['id'];
+      require_once VIEW_PATH . '/produkt.php';
     } else {
       // Produkt nie został znaleziony
       $welcomeMessage = $id . ": brak takiego produktu";
+      require_once VIEW_PATH . '/produktErro.php';
     }
-
-    require_once VIEW_PATH . '/produkt.php';
   }
 }

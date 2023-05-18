@@ -31,11 +31,12 @@
   </form>
 
   <h1>Witaj na <?php echo $pageTitle ?> </h1>
-  <?php echo $img ?>
 
   <?php echo $welcomeMessage ?>
   <br>
-  <button id=" <?php echo $id ?>" type="button" class="AddToBasketBtn btn btn-primary">Dodaj do koszyka</button>
+
+
+
 
 </body>
 

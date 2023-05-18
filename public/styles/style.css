@@ -1,9 +1,9 @@
 /* sher for style */
-form {
+.productForm{
     border: 3px solid #f1f1f1;
 }
 
-input[type = "text"] {
+.productForm input[type = "text"] {
     width: 200px;
     padding: 10px 20px;
     margin: 8px 0;
@@ -12,7 +12,7 @@ input[type = "text"] {
     box-sizing: border-box;
 }
 
-input[type = "submit"] {
+.productForm input[type = "submit"] {
 
     background-color: #4CAF50;
     color: white;
@@ -23,5 +23,41 @@ input[type = "submit"] {
     cursor: pointer;
     width: 100px;
 }
+.AddToBasketBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
 
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
 
+.authForm {
+    border: 3px solid #f1f1f1;
+    width: 35%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.authForm input[type = "text"], .authForm input[type = "password"], .authForm input[type = "email"] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.authForm input[type = "submit"] {
+
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}

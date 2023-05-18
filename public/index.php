@@ -33,6 +33,26 @@ foreach ($routes as $route => $handler) {
   }
 }
 
+function view($viewName, $params = [])
+{
+  require_once VIEW_PATH . "/{$viewName}.php";
+}
+
+function loadController($controllerName, $actionName, $params = [])
+{
+  $controllerName  = $controllerName . "Controller";
+
+  // echo $controllerName;
+  $controllerClass = "Controllers\\" . $controllerName;
+  require_once CONTROLLER_PATH . "/{$controllerName}.php";
+  $controller = new $controllerClass();
+  $controller->$actionName(...$params);
+
+  //   // return;
+}
+
+
+
 // Jeśli żądana ścieżka nie pasuje do żadnego routingu, zwróć błąd 404
 header("HTTP/1.0 404 Not Found");
 echo '404';

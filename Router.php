@@ -22,6 +22,14 @@ return [
     'controller' => 'ContactController',
     'action' => 'index'
   ],
+  '/login' => [
+    'controller' => 'AuthController',
+    'action' => 'login'
+  ],
+  '/register' => [
+    'controller' => 'AuthController',
+    'action' => 'register'
+  ],
 
   // setup routes 
   '/style/(.+)' => [
