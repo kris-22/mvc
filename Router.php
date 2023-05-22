@@ -18,8 +18,12 @@ return [
     'controller' => 'ProductController',
     'action' => 'show'
   ],
-  '/studia/kontakt' => [
+  '/kontakt' => [
     'controller' => 'ContactController',
+    'action' => 'index'
+  ],
+  '/koszyk' => [
+    'controller' => 'BracketController',
     'action' => 'index'
   ],
   '/login' => [

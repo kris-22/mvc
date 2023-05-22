@@ -41,6 +41,13 @@
       "cena": "1500",
       "description": "super monitor, taki gamingowy",
       "img":"https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/8/pr_2021_8_23_7_58_19_702_00.jpg"
+    },
+    {
+      "id": 7,
+      "name": "mikrofon",
+      "cena": "500",
+      "description": "super mikrofon, taki do streamowania",
+      "img": "https://m.media-amazon.com/images/I/61qPORPsvoL._AC_UF894,1000_QL80_.jpg"
     }
   ]
 }

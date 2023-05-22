@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo APP_FOLDER ?>/style/style.css">
+  <link rel="stylesheet" type="text/css" href="<?= APP_FOLDER ?>/style/style.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
       <input type="submit" value="submit">
     </form>
 
-    <h3>Nie masz konta? <a href="<?php echo APP_FOLDER ?>/register">Zarejestruj się</a></h3>
+    <h3>Nie masz konta? <a href="<?= APP_FOLDER ?>/register">Zarejestruj się</a></h3>
   </div>
 
   <?php

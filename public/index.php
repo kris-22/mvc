@@ -38,7 +38,7 @@ foreach ($routes as $route => $handler) {
     require_once APP_ROOT . "/src/Controllers/{$controllerName}.php";
     $controller = new $controllerClass();
     if ($controllerName != "SetupController") {
-      view("components/head", "", true);
+      view("components/head", [], true);
     }
     $controller->$actionName(...$params);
     // Zakończ przetwarzanie

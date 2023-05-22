@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo APP_FOLDER ?>/style/style.css">
+  <link rel="stylesheet" type="text/css" href="<?= APP_FOLDER ?>/style/style.css">
 </head>
 
 <body>
@@ -31,13 +31,13 @@
       <br>
       <input type="password" name="password" id="password">
       <br>
-      <label for="password">Password</label>
+      <label for="password">Confirm Password</label>
       <br>
       <input type="password" name="password" id="password">
       <br>
       <input type="submit" value="submit">
 
-      <h3>Masz już konto? <a href="<?php echo APP_FOLDER ?>/login">Zaloguj się</a></h3>
+      <h3>Masz już konto? <a href="<?=APP_FOLDER ?>/login">Zaloguj się</a></h3>
 
   </div>
 

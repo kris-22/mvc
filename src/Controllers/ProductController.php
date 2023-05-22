@@ -28,21 +28,20 @@ class ProductController
         // print_r($product);
         foreach ($product as $key => $value) {
             $options .= "<option value='" . $value['name'] . "'>";
-            $welcomeMessage .= "
-        <br> 
+            $welcomeMessage .= "<br><br> 
         <a href='" . APP_FOLDER . "/produkty/" . $value['name'] . "'>" .
                 "<img src='" . @$value['img'] . "' width='100px'>" .
                 $value['name'] .
                 "  " .
                 $value['cena'] . "zł" .
-                "</a>";
+                "</a><br>____________________";
         }
         loadController('Menu', 'index');
         loadController('Product', 'searchBar');
 
 
-        // require VIEW_PATH . '/products/produktErro.php';
-        view('products/produktErro', [
+        // require VIEW_PATH . '/products/produktError.php';
+        view('products/produktError', [
             'pageTitle' => $pageTitle,
             'welcomeMessage' => $welcomeMessage,
             'img' => $img,
@@ -108,9 +107,9 @@ class ProductController
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
-            // require VIEW_PATH . '/products/produktErro.php';
+            // require VIEW_PATH . '/products/produktError.php';
             loadController('Menu', 'index');
-            view('products/produktErro', [
+            view('products/produktError', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
@@ -156,7 +155,7 @@ class ProductController
             $koszyk = $product['id'];
             $cena = $product['cena'];
             // require VIEW_PATH . '/products/produktOne.php';
-            view('products/produktOne', [
+            view('products/produkt', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
@@ -167,8 +166,8 @@ class ProductController
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
-            // require VIEW_PATH . '/products/produktErro.php';
-            view('products/produktOne', [
+            // require VIEW_PATH . '/products/produktError.php';
+            view('products/produktError', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,

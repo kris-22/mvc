@@ -69,12 +69,12 @@
 <!-- strona główna  -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <div class="navbar">
-  <a href="<?php echo APP_FOLDER ?>/">Home</a>
-  <a href="<?php echo APP_FOLDER ?>/produkty">produkty</a>
+  <a href="<?= APP_FOLDER ?>/">Home</a>
+  <a href="<?= APP_FOLDER ?>/produkty">produkty</a>
   <!-- koszyk -->
 
-  <a class="koszyk" href="<?php echo APP_FOLDER ?>/koszyk"> <i class="material-icons">shopping_basket</i>
+  <a class="koszyk" href="<?= APP_FOLDER ?>/koszyk"> <i class="material-icons">shopping_basket</i>
   </a>
-  <a href="<?php echo APP_FOLDER ?>/login">login</a>
+  <a href="<?= APP_FOLDER ?>/login">login</a>
 </div>
 </div>
