@@ -25,7 +25,7 @@ class SetupController
   // Metoda łądająca pliki JS
   public function script($name)
   {
-    $path = APP_ROOT . '/public/scripts/' . $name;
+    $path = APP_ROOT . '/public/javascript/' . $name;
     header('Content-Type: text/javascript');
     echo file_get_contents($path);
   }

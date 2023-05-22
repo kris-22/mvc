@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <?php
-  loadController('Menu', 'index');
+<?php
+loadController('Menu', 'index');
 
 
-  ?>
-  <h1>Witaj na <?= $params['pageTitle'] ?> </h1>
+?>
+<h1>Witaj na <?= $params['pageTitle'] ?> </h1>
 
-  <h3> <?php echo $params['welcomeMessage']  ?> </h3>
-  <?php
-  // loadController("Product")
-  ?>
-  <content>
-    <!-- witamy na stronie naszego sklepu -->
+<h3> <?php echo $params['welcomeMessage']  ?> </h3>
+<?php
+// loadController("Product")
+?>
+<content>
+  <!-- witamy na stronie naszego sklepu -->
 
 
 
-  </content>
+</content>
 
 
 

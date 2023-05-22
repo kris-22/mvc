@@ -38,6 +38,7 @@ class ProductController
                 "</a>";
         }
         loadController('Menu', 'index');
+        loadController('Product', 'searchBar');
 
 
         // require VIEW_PATH . '/products/produktErro.php';
@@ -93,6 +94,8 @@ class ProductController
             $cena = $product['cena'];
             // require VIEW_PATH . '/products/produkt.php';
             loadController('Menu', 'index');
+            loadController('Product', 'searchBar');
+
 
             view('products/produkt', [
                 'pageTitle' => $pageTitle,
@@ -145,17 +148,13 @@ class ProductController
 
         // załoadowania modelu produktu i pobranie danych
         $product = Product::getProduct($id);
-        $productList = Product::listProducts();
         $options = "";
-        foreach ($productList as $key => $value) {
-            $options .= "<option value='" . $value["name"] . "'>";
-        }
-
         // Produkt został znaleziony opis produktu
         if ($product !== null) {
             $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
             $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
             $koszyk = $product['id'];
+            $cena = $product['cena'];
             // require VIEW_PATH . '/products/produktOne.php';
             view('products/produktOne', [
                 'pageTitle' => $pageTitle,
@@ -163,17 +162,31 @@ class ProductController
                 'img' => $img,
                 'koszyk' => $koszyk,
                 'options' => $options,
+                'cena' => $cena
             ]);
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
             // require VIEW_PATH . '/products/produktErro.php';
-            view('products/produktErro', [
+            view('products/produktOne', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
                 'options' => $options
             ]);
         }
+    }
+
+    //search bar
+    public function searchBar()
+    {
+        $options = "";
+        $productList = Product::listProducts();
+        foreach ($productList as $key => $value) {
+            $options .= "<option value='" . $value["name"] . "'>";
+        }
+        view('products/searchBar', [
+            'options' => $options
+        ]);
     }
 }
