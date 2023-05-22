@@ -12,33 +12,72 @@
 
 
 <body>
-
+  <!-- //load jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- strona główna  -->
 
   <?php
-  loadController('Menu', 'index');
+
 
 
   ?>
-  <form action="produkty/load" class="productForm">
 
-    <input type="text" list="ice-cream-flavors" id="ice-cream-choice" name="name">
+  <form onsubmit="return false" class="productForm">
+
+    <input type="text" list="ice-cream-flavors" id="ajaxData" name="name">
     <datalist id="ice-cream-flavors">
       <?php echo $params["options"] ?>
     </datalist>
 
-    <input type="submit" value="submit">
+    <input type="submit" class="pButton" value="submit">
 
   </form>
+  <content>
 
-  <h1>Witaj na <?php echo $params["pageTitle"] ?> </h1>
-  <?php echo $params["img"] ?>
 
-  <?php echo $params["welcomeMessage"] ?>
-  <br>
-  <button id=" <?php echo $params['koszyk'] ?>" type="button" class="AddToBasketBtn btn btn-primary">Dodaj do koszyka</button>
+    <h1>Witaj na <?php echo $params["pageTitle"] ?> </h1>
+    <?php echo $params["img"] ?>
+    <br>
+    <b>Cena: </b>
+    <?php echo $params["cena"] ?>
+    zł
+    <br>
 
+    <?php echo $params["welcomeMessage"] ?>
+    <br>
+
+
+
+    <button id=" <?php echo $params['koszyk'] ?>" type="button" class="pButton">Dodaj do koszyka</button>
+
+    <!-- onclick subbmit buttton run ajax -->
+    <script>
+      $(document).ready(function() {
+        $(".pButton").click(function() {
+          var id = $("#ajaxData").val();
+          $.ajax({
+            url: "",
+            method: "POST",
+            data: {
+              ajax: true,
+              controller: "Product",
+              class: "showOne",
+              id: id
+            },
+            success: function(data) {
+              // alert(data);
+              $("content").html(data);
+              window.history.pushState("data", "witaj ", id);
+              document.title = id;
+
+            }
+          });
+        });
+      });
+    </script>
+  </content>
 </body>
+
 
 </html>

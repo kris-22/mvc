@@ -9,8 +9,18 @@ require_once dirname(__DIR__) . '/config.php';
 $routes = require_once APP_ROOT . '/Router.php';
 
 // Wczytaj plik z routingiem
-// Przetwórz żądanie
+// // Przetwórz żądanie
+if (isset($_POST["ajax"]) && $_POST["ajax"] == true) {
+
+  if (isset($_POST["controller"]) && isset($_POST["class"])) {
+    loadController($_POST["controller"], $_POST["class"], ['id' => $_POST["id"]]);
+    exit;
+  }
+}
+
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+
 
 // run autch object
 

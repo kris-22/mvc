@@ -37,6 +37,7 @@ class ProductController
                 $value['cena'] . "zł" .
                 "</a>";
         }
+        loadController('Menu', 'index');
 
 
         // require VIEW_PATH . '/products/produktErro.php';
@@ -89,18 +90,23 @@ class ProductController
             $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
             $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
             $koszyk = $product['id'];
+            $cena = $product['cena'];
             // require VIEW_PATH . '/products/produkt.php';
+            loadController('Menu', 'index');
+
             view('products/produkt', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
                 'koszyk' => $koszyk,
-                'options' => $options
+                'options' => $options,
+                'cena' => $cena
             ]);
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
             // require VIEW_PATH . '/products/produktErro.php';
+            loadController('Menu', 'index');
             view('products/produktErro', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
@@ -156,7 +162,7 @@ class ProductController
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
                 'koszyk' => $koszyk,
-                'options' => $options
+                'options' => $options,
             ]);
         } else {
             // Produkt nie został znaleziony

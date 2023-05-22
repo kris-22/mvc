@@ -28,7 +28,7 @@
       <?php echo $params["options"] ?>
     </datalist>
 
-    <input type="submit" value="submit">
+    <input class="pButton" type="submit" value="submit">
 
   </form>
 
