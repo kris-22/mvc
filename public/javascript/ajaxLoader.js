@@ -13,6 +13,7 @@ $(".ajaxData").click(function () {
   var id = $(this).data("id");
   var controller = $(this).data("controller");
   var classValue = $(this).data("class");
+  var urlPath = $(this).data("urlpath");
   id = $(id).val();
   $.ajax({
     url: "",
@@ -25,7 +26,8 @@ $(".ajaxData").click(function () {
     },
     success: function (data) {
       $("content").html(data);
-      window.history.pushState("data", "witaj ", id);
+      urlPath = urlPath + id;
+      window.history.pushState("data", "witaj ", urlPath);
       document.title = id;
     },
   });
