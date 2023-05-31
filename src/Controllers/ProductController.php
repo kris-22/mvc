@@ -87,11 +87,22 @@ class ProductController
 
         // Produkt został znaleziony opis produktu
         if ($product !== null) {
+<<<<<<< HEAD
             $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
             $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
             $koszyk = $product['id'];
             $cena = $product['cena'];
             // require VIEW_PATH . '/products/produkt.php';
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 431e2a7 (add mysql database)
+            $pageTitle = "Produkt " . $product->getName(); //tytuł strony
+            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product->getName();
+            $img = '<img  width="100px" src="' .  @$product->getImg() . '" alt="' . $id . '">';
+            $koszyk = $product->getId();
+            $cena = $product->getPrice();
+>>>>>>> 31fedc3 (add mysql database)
             loadController('Menu', 'index');
             loadController('Product', 'searchBar');
 
