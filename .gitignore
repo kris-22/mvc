@@ -1,0 +1,23 @@
+# the composer package lock file and install directory
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# /composer.lock
+/fuel/vendor
+
+# Ignoruj plik .env
+/.env
+.env
+
+# Ignoruj katalog vendor
+/vendor
+
+# Ignoruj pliki logów
+/log/*.log
+
+# Ignoruj pliki tymczasowe
+/tmp/
+
+# dynamically generated files
+/fuel/app/logs/*/*/*
+/fuel/app/cache/*/*
+/fuel/app/config/crypt.php
