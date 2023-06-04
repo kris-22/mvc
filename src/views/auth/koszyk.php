@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+loadController('Menu', 'index');
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="<?= APP_FOLDER ?>/style/style.css">
-</head>
+?>
 
-<body>
-  <?php
-  loadController('Menu', 'index');
-
-  ?>
-  
-  <!-- login form -->
+<!-- login form -->
 <div class="bracketTable">
     <h1>Koszyk</h1>
     <table border="solid">

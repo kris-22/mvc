@@ -1,18 +1,16 @@
 <?php
 loadController('Menu', 'index');
 
-
 ?>
 <h1>Witaj na <?= $params['pageTitle'] ?> </h1>
 
 <h3> <?= $params['welcomeMessage']  ?> </h3>
 <?php
-// loadController("Product")
+// loadController("Product", "showOne", ['id' => "telefon"]);
+// loadController("Product", "show", ['id' => "laptop"]);;
 ?>
 <content>
   <!-- witamy na stronie naszego sklepu -->
-
-
 
 </content>
 

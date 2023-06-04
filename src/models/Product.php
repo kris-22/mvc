@@ -2,6 +2,11 @@
 
 namespace Models;
 
+include_once 'Database.php';
+
+use PDO;
+use Models\Database;
+
 class Product
 {
     private $id;
@@ -11,14 +16,14 @@ class Product
     private $img;
 
     // Konstruktor
-    public function __construct($id, $name, $description, $price, $img)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-        $this->img = $img;
-    }
+    // public function __construct()
+    // {
+    //     $this->id;
+    //     $this->name;
+    //     $this->description;
+    //     $this->price;;
+    //     $this->img;
+    // }
     // Metody dostępu do pól
     public function getId()
     {
@@ -65,14 +70,20 @@ class Product
     // Metoda informacji o produkcie
     public static function getProduct($name)
     {
-        $data = file_get_contents(APP_ROOT . '/src/dev/data.json');
-        $products = json_decode($data, true);
+        $db = new Database();
         // zmień na małe liery
         $name = strtolower($name);
-        foreach ($products["products"] as $product) {
-            if (strtolower($product['name']) === $name) {
-                return $product;
-            }
+        $query = "SELECT * FROM products WHERE name = '$name'";
+        $stmt = $db->query($query);
+        $products = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($products) {
+            $product = new Product();
+            $product->id = $products['id'];
+            $product->name = $products['name'];
+            $product->description = $products['description'];
+            $product->price = $products['price'];
+            $product->img = $products['img'];
+            return $product;
         }
 
         return null;
@@ -81,11 +92,18 @@ class Product
     // Metoda pobierania nazw produktów z pliku JSON
     public static function listProducts()
     {
-        $data = file_get_contents(APP_ROOT . '/src/dev/data.json');
-        $products = json_decode($data, true);
+        $db = new Database();
+        $query = "SELECT * FROM products";
+        $stmt = $db->query($query);
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $lista = [];
-        foreach ($products["products"] as $product) {
-            array_push($lista, $product);
+        foreach ($products as $product) {
+            $lista[] = new Product();
+            end($lista)->id = $product['id'];
+            end($lista)->name = $product['name'];
+            end($lista)->description = $product['description'];
+            end($lista)->price = $product['price'];
+            end($lista)->img = $product['img'];
         }
 
         return $lista;

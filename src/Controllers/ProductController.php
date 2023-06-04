@@ -27,14 +27,13 @@ class ProductController
         $product = Product::listProducts();
         // print_r($product);
         foreach ($product as $key => $value) {
-            $options .= "<option value='" . $value['name'] . "'>";
-            $welcomeMessage .= "<br><br> 
-        <a href='" . APP_FOLDER . "/produkty/" . $value['name'] . "'>" .
-                "<img src='" . @$value['img'] . "' width='100px'>" .
-                $value['name'] .
-                "  " .
-                $value['cena'] . "zł" .
-                "</a><br>____________________";
+            $options .= "<option value='" . $value->getName() . "'>";
+            $welcomeMessage .= "
+                <br><br> 
+                <a href='" . APP_FOLDER . "/produkty/" . $value->getName() . "'>" .
+                "<img src='" . @$value->getImg() . "' width='100px'>" .
+                $value->getName() .
+                $options .= "<option value='" . $value->getName() . "'>";
         }
         loadController('Menu', 'index');
         loadController('Product', 'searchBar');
@@ -79,52 +78,32 @@ class ProductController
 
         // załoadowania modelu produktu i pobranie danych
         $product = Product::getProduct($id);
-        $productList = Product::listProducts();
-        $options = "";
-        foreach ($productList as $key => $value) {
-            $options .= "<option value='" . $value["name"] . "'>";
-        }
 
         // Produkt został znaleziony opis produktu
         if ($product !== null) {
-<<<<<<< HEAD
-            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
-            $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
-            $koszyk = $product['id'];
-            $cena = $product['cena'];
-            // require VIEW_PATH . '/products/produkt.php';
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 431e2a7 (add mysql database)
             $pageTitle = "Produkt " . $product->getName(); //tytuł strony
-            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product->getName();
+            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product->getDescription();
             $img = '<img  width="100px" src="' .  @$product->getImg() . '" alt="' . $id . '">';
             $koszyk = $product->getId();
             $cena = $product->getPrice();
->>>>>>> 31fedc3 (add mysql database)
             loadController('Menu', 'index');
             loadController('Product', 'searchBar');
-
 
             view('products/produkt', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
                 'img' => $img,
                 'koszyk' => $koszyk,
-                'options' => $options,
                 'cena' => $cena
             ]);
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
-            // require VIEW_PATH . '/products/produktError.php';
             loadController('Menu', 'index');
             view('products/produktError', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
-                'img' => $img,
-                'options' => $options
+                'img' => $img
             ]);
         }
     }
@@ -148,7 +127,7 @@ class ProductController
         // przekieruj na stronę bez geta
         if (isset($_GET['name'])) {
             if (empty($_GET['name'])) {
-                header("Location:" . APP_FOLDER . "/produkty");
+                header("Location:" . APP_FOLDER . "/Witaj na Produkty");
             } else {
                 $name = $_GET['name'];
                 echo $name;
@@ -161,11 +140,11 @@ class ProductController
         $options = "";
         // Produkt został znaleziony opis produktu
         if ($product !== null) {
-            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product['description'];
-            $img = '<img  width="100px" src="' .  @$product['img'] . '" alt="' . $id . '">';
-            $koszyk = $product['id'];
-            $cena = $product['cena'];
-            // require VIEW_PATH . '/products/produktOne.php';
+            $welcomeMessage = "<h3>Witaj na stronie produktu <u>" . $id . "</u> !</h3><br>" . $product->getDescription();
+            $img = '<img  width="100px" src="' .  @$product->getImg() . '" alt="' . $id . '">';
+            $koszyk = $product->getId();
+            $cena = $product->getPrice();
+
             view('products/produkt', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
@@ -177,7 +156,6 @@ class ProductController
         } else {
             // Produkt nie został znaleziony
             $welcomeMessage = $id . ": brak takiego produktu";
-            // require VIEW_PATH . '/products/produktError.php';
             view('products/produktError', [
                 'pageTitle' => $pageTitle,
                 'welcomeMessage' => $welcomeMessage,
@@ -193,7 +171,7 @@ class ProductController
         $options = "";
         $productList = Product::listProducts();
         foreach ($productList as $key => $value) {
-            $options .= "<option value='" . $value["name"] . "'>";
+            $options .= "<option value='" . $value->getName() . "'>";
         }
         view('products/searchBar', [
             'options' => $options

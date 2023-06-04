@@ -75,6 +75,6 @@
 
   <a class="koszyk" href="<?= APP_FOLDER ?>/koszyk"> <i class="material-icons">shopping_basket</i>
   </a>
-  <a href="<?= APP_FOLDER ?>/login">login</a>
+  <a href="<?= APP_FOLDER ?>/login"><?= $params["status"] ?></a>
 </div>
 </div>
