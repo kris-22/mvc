@@ -25,6 +25,12 @@ loadController('Menu', 'index');
             <td>1</td>
             <td><a href="">Usuń</a></td>
         </tr>
+        <tr>
+            <td>Produkt 2</td>
+            <td>200</td>
+            <td>1</td>
+            <td><a href="">Usuń</a></td>
+        </tr>
     </table>
 
 </div>
